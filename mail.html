@@ -1,0 +1,23 @@
+<? php
+echo '<?php';
+echo 'if (isset($_POST['send'])) {';
+echo '';
+echo '$to= 'xuqi19900228@gmail.com';';
+echo '$subject= 'Feedback from WOW Site';';
+echo '$message = 'Name:' .$_POST['name']."\r\n\r\n";';
+echo '$message .='Email:' .$_POST['email']."\r\n\r\n";';
+echo '$message .= 'Comments:'. $_POST['comments'];';
+echo '$success= mail ($to, $subject, $message, $headers);';
+echo '';
+echo '}';
+echo '?>';
+?>
+<body>
+<?php if (isset($success) && $success) {?>
+		<h1>Thank you</h1>
+		Your comments have been sent.
+		<?php } else { ?>
+		<h1>Oops! </h1>
+	    Sorry, there was a problem sending your comments. 
+	    <?php } ?>
+</body>
